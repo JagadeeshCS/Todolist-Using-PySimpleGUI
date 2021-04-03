@@ -12,6 +12,7 @@ layout = [
 ]
 
 def add_item():
+    
     item = values['add_item']
     tasks.append(item)
     window.FindElement('items').Update(values=tasks)
@@ -20,12 +21,14 @@ def add_item():
 
 
 def delete_item():
+    
     delete_val = values['items'][0]
     tasks.remove(delete_val)
     window.FindElement('items').Update(values=tasks)
 
 
 def edit_item():
+    
     edit_val = values['items'][0]
     tasks.remove(edit_val)
     window.FindElement('items').Update(values=tasks)
@@ -35,6 +38,7 @@ def edit_item():
 
 window = sg.Window("Todolist", layout)
 while True:
+    
     event, values = window.Read()
     if event == sg.WINDOW_CLOSED:
         break
